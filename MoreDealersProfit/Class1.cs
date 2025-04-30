@@ -33,7 +33,7 @@ public class EntryPoint : MelonMod
         MoreProfit = Category.CreateEntry("moreProfit", false, "Allows more profit from dealers (Something like a counter offer)");
         SpeedMultipliey = Category.CreateEntry("SpeedMultiplier", 1.0f, "Allows more speed for dealers");
         SigningFee = Category.CreateEntry("SigningFee", 500, "Modifies signing fee for dealers");
-        Cut = Category.CreateEntry("Cut", 0.2f, "Modifies cut for dealers");
+        Cut = Category.CreateEntry("Cut", 0.2f, "Modifies cut for dealers.");
         AutoPickupMoney = Category.CreateEntry("AutoMoneyPickup", false, "Automatically collects money from dealers");
         Category.SetFilePath("UserData/EnhancedDealers.cfg",true,false);
         Category.SaveToFile();
