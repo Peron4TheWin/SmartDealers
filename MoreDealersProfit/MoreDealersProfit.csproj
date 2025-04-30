@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="C:\s1\*.dll"/>
+    </ItemGroup>
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="tasklist | findstr /I &quot;Schedule.*I.exe&quot; &gt;nul &amp;&amp; taskkill /F /IM &quot;Schedule I.exe&quot;&#xA;:retry&#xA;COPY &quot;$(OutputPath)$(AssemblyName).dll&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\Schedule I\Mods&quot; &gt; nul 2&gt;&amp;1&#xA;if %errorlevel% equ 1 goto retry&#xA;&#xA;start &quot;&quot; &quot;steam://rungameid/3164500&quot;&#xA;EXIT" />
+    </Target>
+</Project>
